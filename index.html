@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Internship Portal assignment project">
+    <title>Internship Portal</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-shell">
+        <aside class="sidebar" id="sidebar">
+            <a class="brand" href="#dashboard"><span class="brand-mark">IP</span><span>Internship Portal</span></a>
+            <p class="sidebar-label">WORKSPACE</p>
+            <nav class="side-nav" aria-label="Main navigation">
+                <a class="nav-link active" href="#dashboard" data-section="dashboard"><span>▦</span> Dashboard</a>
+                <a class="nav-link" href="#assignments" data-section="assignments"><span>▤</span> Assignments</a>
+                <a class="nav-link" href="#applications" data-section="applications"><span>▣</span> Applications</a>
+            </nav>
+            <div class="sidebar-bottom">
+                <div class="help-card">
+                    <span class="help-icon">?</span>
+                    <strong>Need help?</strong>
+                    <p>Review your tasks and keep your applications up to date.</p>
+                </div>
+                <p class="sidebar-foot">Internship Portal · Demo project</p>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="topbar">
+                <button class="mobile-menu icon-button" id="menuButton" aria-label="Toggle navigation">☰</button>
+                <div class="breadcrumb">Workspace <span>/</span> <strong id="breadcrumbCurrent">Dashboard</strong></div>
+                <div class="top-actions">
+                    <button class="icon-button notification-trigger" id="notificationButton" aria-label="Show notifications">♧<span class="notification-dot"></span></button>
+                    <button class="theme-button" id="themeButton" type="button"><span id="themeIcon">☾</span><span id="themeText">Dark mode</span></button>
+                    <div class="avatar" aria-label="User initials">BM</div>
+                </div>
+            </header>
+
+            <section class="page-section" id="dashboard">
+                <div class="welcome-row">
+                    <div>
+                        <p class="eyebrow">THURSDAY, NOVEMBER 5, 2026</p>
+                        <h1>Welcome back, Bilal <span class="wave">👋</span></h1>
+                        <p class="muted">Keep learning, complete your assignments, and track your progress.</p>
+                    </div>
+                    <a class="primary-button" href="#assignments">Explore assignments <span>→</span></a>
+                </div>
+
+                <div class="stats-grid">
+                    <article class="stat-card"><div class="stat-icon purple">▤</div><p>Total assignments</p><strong id="totalCount">0</strong><span class="stat-note">Available tasks</span></article>
+                    <article class="stat-card"><div class="stat-icon blue">◷</div><p>In progress</p><strong id="progressCount">0</strong><span class="stat-note">Currently working on</span></article>
+                    <article class="stat-card"><div class="stat-icon green">✓</div><p>Completed</p><strong id="completedCount">0</strong><span class="stat-note">Tasks finished</span></article>
+                    <article class="stat-card"><div class="stat-icon orange">▣</div><p>Applications</p><strong id="applicationCount">0</strong><span class="stat-note">Submitted by you</span></article>
+                </div>
+
+                <div class="content-grid">
+                    <section class="panel recent-panel">
+                        <div class="panel-heading"><div><p class="eyebrow">YOUR WORK</p><h2>Recent assignments</h2></div><a href="#assignments" class="text-link">View all →</a></div>
+                        <div id="recentAssignments" class="compact-list"></div>
+                    </section>
+                    <section class="panel progress-panel">
+                        <div class="panel-heading"><div><p class="eyebrow">OVERVIEW</p><h2>Your progress</h2></div><span class="subtle-pill">Live stats</span></div>
+                        <div class="progress-number"><strong id="completionPercent">0%</strong><span>completed</span></div>
+                        <div class="progress-track"><span id="completionBar"></span></div>
+                        <div class="progress-legend"><span><i class="legend-dot done"></i> Completed</span><span><i class="legend-dot todo"></i> Remaining</span></div>
+                        <p class="progress-tip">Small steps every day lead to meaningful progress.</p>
+                    </section>
+                </div>
+            </section>
+
+            <section class="page-section" id="assignments">
+                <div class="section-heading">
+                    <div><p class="eyebrow">LEARN BY DOING</p><h1>Assignments</h1><p class="muted">Explore tasks, check their requirements, and track your progress.</p></div>
+                    <div class="mode-control"><label for="implementationMode">Implementation</label><select id="implementationMode"><option value="vanilla">Vanilla JavaScript</option><option value="jquery">jQuery comparison</option></select></div>
+                </div>
+                <div class="toolbar">
+                    <label class="search-box"><span>⌕</span><input type="search" id="assignmentSearch" placeholder="Search assignments..." aria-label="Search assignments"></label>
+                    <select id="categoryFilter" aria-label="Filter by category"><option value="all">All categories</option><option value="Frontend">Frontend</option><option value="JavaScript">JavaScript</option><option value="Backend">Backend</option><option value="UI/UX">UI/UX</option></select>
+                    <select id="statusFilter" aria-label="Filter by status"><option value="all">All statuses</option><option value="Pending">Pending</option><option value="In Progress">In Progress</option><option value="Completed">Completed</option></select>
+                </div>
+                <div class="result-line"><span id="resultCount">Loading assignments...</span><span id="modeLabel">Rendered with Vanilla JavaScript</span></div>
+                <div class="assignment-grid" id="assignmentList" aria-live="polite"></div>
+                <div class="empty-state hidden" id="emptyState"><div>⌕</div><h3>No assignments found</h3><p>Try another search term or change your filters.</p></div>
+            </section>
+
+            <section class="page-section" id="applications">
+                <div class="section-heading"><div><p class="eyebrow">YOUR SUBMISSIONS</p><h1>My applications</h1><p class="muted">Review the applications you have submitted through this portal.</p></div><button class="primary-button" id="openGeneralApplication">New application <span>＋</span></button></div>
+                <div class="panel table-panel">
+                    <div class="panel-heading"><div><h2>Application history</h2><p class="muted small">Your submitted application details are saved in this browser.</p></div></div>
+                    <div class="table-wrap"><table><thead><tr><th>Applicant</th><th>Assignment</th><th>Email</th><th>Date submitted</th><th>Status</th></tr></thead><tbody id="applicationTable"><tr><td colspan="5" class="table-empty">No applications submitted yet.</td></tr></tbody></table></div>
+                </div>
+            </section>
+
+            <footer class="footer"><span>© 2026 Internship Portal</span><span>Built with HTML, CSS, Vanilla JavaScript & jQuery</span></footer>
+        </main>
+    </div>
+
+    <div class="modal-backdrop hidden" id="modalBackdrop" role="presentation">
+        <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="modal-header"><div><p class="eyebrow">ASSIGNMENT DETAILS</p><h2 id="modalTitle">Assignment</h2></div><button class="icon-button close-modal" id="closeModal" aria-label="Close dialog">×</button></div>
+            <div id="modalBody"></div>
+        </section>
+    </div>
+
+    <div class="toast-region" id="toastRegion" aria-live="polite" aria-atomic="true"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/vanilla.js"></script>
+    <script src="js/jquery.js"></script>
+</body>
+</html>

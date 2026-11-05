@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "title": "Responsive Portfolio Website",
+        "category": "Frontend",
+        "level": "Beginner",
+        "duration": "3 days",
+        "status": "In Progress",
+        "description": "Build a responsive personal portfolio using semantic HTML and modern CSS. Include an introduction, skills, projects, and contact section.",
+        "requirements": [
+            "Use semantic HTML5 elements",
+            "Create a responsive layout with CSS Flexbox or Grid",
+            "Add a working contact form layout",
+            "Test the page on mobile and desktop"
+        ]
+    },
+    {
+        "id": 2,
+        "title": "JavaScript Profile Dashboard",
+        "category": "JavaScript",
+        "level": "Intermediate",
+        "duration": "4 days",
+        "status": "Pending",
+        "description": "Create an interactive profile dashboard that displays user details, skills, projects, and calculated statistics.",
+        "requirements": [
+            "Use objects and arrays",
+            "Render data using DOM manipulation",
+            "Implement search and skill checking",
+            "Save and load data using localStorage"
+        ]
+    },
+    {
+        "id": 3,
+        "title": "Internship Application Form",
+        "category": "Frontend",
+        "level": "Beginner",
+        "duration": "2 days",
+        "status": "Completed",
+        "description": "Design and validate an internship application form with accessible labels and useful feedback.",
+        "requirements": [
+            "Use appropriate input types",
+            "Add required field validation",
+            "Display a submission confirmation",
+            "Keep the form responsive"
+        ]
+    },
+    {
+        "id": 4,
+        "title": "Weather Data Fetching App",
+        "category": "JavaScript",
+        "level": "Intermediate",
+        "duration": "4 days",
+        "status": "Pending",
+        "description": "Build a small weather interface that retrieves and displays JSON data asynchronously.",
+        "requirements": [
+            "Use fetch and async/await",
+            "Handle loading and error states",
+            "Parse JSON responses",
+            "Display results dynamically"
+        ]
+    },
+    {
+        "id": 5,
+        "title": "Task Management API",
+        "category": "Backend",
+        "level": "Advanced",
+        "duration": "6 days",
+        "status": "Pending",
+        "description": "Plan a simple task management API with routes for creating, reading, updating, and deleting tasks.",
+        "requirements": [
+            "Define CRUD operations",
+            "Document API endpoints",
+            "Validate request data",
+            "Explain error responses"
+        ]
+    },
+    {
+        "id": 6,
+        "title": "Dashboard UI Redesign",
+        "category": "UI/UX",
+        "level": "Intermediate",
+        "duration": "5 days",
+        "status": "In Progress",
+        "description": "Improve a dashboard layout by focusing on hierarchy, spacing, accessibility, and responsive behavior.",
+        "requirements": [
+            "Create a clear visual hierarchy",
+            "Use a consistent spacing system",
+            "Design desktop and mobile views",
+            "Check color contrast and focus states"
+        ]
+    }
+]
